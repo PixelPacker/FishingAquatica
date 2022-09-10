@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+
+  "name": "Pixel's Fishing Rework",
+  "description": "This mod is created to improve the loot of fishing while providing unique rewards.",
+  "authors": [
+    "PixelPacker"
+  ],
+  "contact": {
+
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/fishingrework/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "pixelpacker.fishingrework.FishingRework"
+    ],
+    "fabric-datagen": [
+      "pixelpacker.fishingrework.datageneration.DataGenEntry"
+    ]
+    },
+
+  "mixins": [
+    "FishingRework.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
