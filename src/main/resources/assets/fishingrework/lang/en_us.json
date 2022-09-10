@@ -1,4 +1,6 @@
 {
-  "item.fishingrework.crate": "Crate",
-  "block.fishingrework.crate": "Crate"
+  "item.fishingrework.basic_crate": "Basic Crate",
+  "block.fishingrework.basic_crate": "Basic Crate",
+  "itemGroup.fishingrework.general": "Pixel's Fishing Rework",
+  "item.fishingrework.sword_fish": "Sword Fish"
 }

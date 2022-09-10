@@ -11,6 +11,6 @@ class LootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generateBlockLootTables() {
-        addDrop(BlockRegister.CRATE);
+        //addDrop(BlockRegister.CRATE);
     }
 }
