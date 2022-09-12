@@ -31,6 +31,7 @@ public abstract class FishingMixin {
             if (player == null || random.nextInt(100) <= 90){
                 return;
             }else{
+                //Basic Crate Table
                 if(player.getMainHandStack().getItem() == Items.FISHING_ROD
                         || player.getMainHandStack().getItem() == ItemRegister.GOLD_FISHING_ROD
                         || player.getMainHandStack().getItem() == ItemRegister.IRON_FISHING_ROD
