@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -11,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import pixelpacker.fishingrework.loot.crates.CrateLootTables;
-import pixelpacker.fishingrework.registers.BlockRegister;
+import pixelpacker.fishingrework.registers.ItemRegister;
 
 import java.util.List;
 import java.util.Random;
@@ -30,12 +31,17 @@ public abstract class FishingMixin {
             if (player == null || random.nextInt(100) <= 90){
                 return;
             }else{
-                //Chooses a random item from the loot crate table and puts it in the player's inventory
-                List<Item> cratesTable = CrateLootTables.INSTANCE.CratesTable;
-                int amountOfCrates = CrateLootTables.INSTANCE.CratesTable.size();
-                int chosenCrate = random.nextInt((amountOfCrates));
-
-                player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
+                if(player.getMainHandStack().getItem() == Items.FISHING_ROD
+                        || player.getMainHandStack().getItem() == ItemRegister.GOLD_FISHING_ROD
+                        || player.getMainHandStack().getItem() == ItemRegister.IRON_FISHING_ROD
+                        || player.getMainHandStack().getItem() == ItemRegister.DIAMOND_FISHING_ROD
+                        || player.getMainHandStack().getItem() == ItemRegister.NETHERITE_FISHING_ROD){
+                    //Chooses a random item from the loot crate table and puts it in the player's inventory
+                    List<Item> cratesTable = CrateLootTables.INSTANCE.CratesTable;
+                    int amountOfCrates = CrateLootTables.INSTANCE.CratesTable.size();
+                    int chosenCrate = random.nextInt((amountOfCrates));
+                    player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
+                }
             }
         }
 

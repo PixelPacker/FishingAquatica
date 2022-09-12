@@ -2,5 +2,9 @@
   "item.fishingrework.basic_crate": "Basic Crate",
   "block.fishingrework.basic_crate": "Basic Crate",
   "itemGroup.fishingrework.general": "Pixel's Fishing Rework",
-  "item.fishingrework.sword_fish": "Sword Fish"
+  "item.fishingrework.sword_fish": "Sword Fish",
+  "item.fishingrework.gold_fishing_rod": "Golden Fishing Rod",
+  "item.fishingrework.iron_fishing_rod": "Iron Fishing Rod",
+  "item.fishingrework.diamond_fishing_rod": "Diamond Fishing Rod",
+  "item.fishingrework.netherite_fishing_rod": "Netherite Fishing Rod"
 }

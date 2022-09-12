@@ -3,7 +3,6 @@ package pixelpacker.fishingrework.loot.crates;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import pixelpacker.fishingrework.registers.BlockRegister;
-import pixelpacker.fishingrework.registers.ItemRegister;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,9 +28,9 @@ public class CrateLootTables {
             Items.LAPIS_LAZULI,
             Items.COAL, Items.COAL, Items.COAL, Items.COAL, Items.COAL, Items.COAL,
             Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON,
-            Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD,
+            Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD,
             Items.PUFFERFISH, Items.PUFFERFISH, Items.PUFFERFISH,
-            Items.TROPICAL_FISH
+            Items.TROPICAL_FISH, Items.TROPICAL_FISH, Items.TROPICAL_FISH
     );
 
 }

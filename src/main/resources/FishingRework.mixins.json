@@ -4,9 +4,11 @@
   "package": "pixelpacker.fishingrework.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "FishingBobberInvalidMixin",
     "FishingMixin"
   ],
   "client": [
+    "FishingBobberRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

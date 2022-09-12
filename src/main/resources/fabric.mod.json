@@ -22,6 +22,9 @@
     ],
     "fabric-datagen": [
       "pixelpacker.fishingrework.datageneration.DataGenEntry"
+    ],
+    "preLaunch": [
+      "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"
     ]
     },
 
