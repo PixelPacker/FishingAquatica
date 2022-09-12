@@ -22,11 +22,13 @@ public class ItemRegister {
 
     //Tools
     /**
-     * TOOL SPEEDS >
+     * Tool Speeds:
+     * <p>
      * Sword: -2.4f
      * Shovel: -3.0f
      * Pickaxe: -2.8f
      * Axe: -3.0f
+     * </p>
      */
     public static ToolItem SWORD_FISH = new SwordFishItem(FishToolMaterial.INSTANCE,4, -2.4f, new Item.Settings().group(ItemGroupRegister.FISHING_GROUP));
 
@@ -36,7 +38,6 @@ public class ItemRegister {
     public static FishingRodItem DIAMOND_FISHING_ROD = new DiamondFishingRodItem(new Item.Settings().maxDamage(256).group(ItemGroupRegister.FISHING_GROUP));
     public static FishingRodItem NETHERITE_FISHING_ROD = new NetheriteFishingRod(new Item.Settings().maxDamage(512).group(ItemGroupRegister.FISHING_GROUP));
 
-
     public void registerItems(){
         register("sword_fish", SWORD_FISH);
         register("gold_fishing_rod", GOLD_FISHING_ROD);
@@ -45,9 +46,7 @@ public class ItemRegister {
         register("netherite_fishing_rod", NETHERITE_FISHING_ROD);
     }
 
-
     public void register(String itemName, Item item){
         Registry.register(Registry.ITEM, new Identifier(FishingRework.MODID, itemName), item);
     }
-
 }

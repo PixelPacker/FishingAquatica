@@ -1,11 +1,13 @@
 package pixelpacker.fishingrework.mixins;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,13 +24,16 @@ public abstract class FishingMixin {
     private static final Random random = new Random();
     @Shadow @Nullable public abstract PlayerEntity getPlayerOwner();
 
+    @Shadow @Final private int luckOfTheSeaLevel;
+
     @Inject(method = "use", at = @At(value = "RETURN", target = "Lnet/minecraft/entity/projectile/FishingBobberEntity;use(Lnet/minecraft/item/ItemStack;)I"))
     public void use(ItemStack usedItem, CallbackInfoReturnable<Integer> cir) {
         //Check return value of bobber, 0 = no fish, 1 = fish, 2 = entity
         //Injects on returns to check status of bobber instead of head
         if(cir.getReturnValue() == 1){
             PlayerEntity player = this.getPlayerOwner();
-            if (player == null || random.nextInt(100) <= 90){
+            int LuckOfTheSea = EnchantmentHelper.getLuckOfTheSea(usedItem);
+            if (player == null || random.nextInt(100) <= (90 - luckOfTheSeaLevel)){
                 return;
             }else{
                 //Basic Crate Table
