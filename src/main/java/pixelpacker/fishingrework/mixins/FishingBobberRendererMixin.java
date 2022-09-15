@@ -13,6 +13,10 @@ import pixelpacker.fishingrework.registers.ItemRegister;
 public class FishingBobberRendererMixin {
     @WrapOperation(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isOf(Lnet/minecraft/item/Item;)Z"))
     private boolean fishingRodHand(ItemStack instance, Item item, Operation<Boolean> original){
-        return original.call(instance, item) || instance.isOf(ItemRegister.GOLD_FISHING_ROD) || instance.isOf(ItemRegister.IRON_FISHING_ROD) || instance.isOf(ItemRegister.DIAMOND_FISHING_ROD) || instance.isOf(ItemRegister.NETHERITE_FISHING_ROD);
+        return original.call(instance, item)
+                || instance.isOf(ItemRegister.GOLD_FISHING_ROD)
+                || instance.isOf(ItemRegister.IRON_FISHING_ROD)
+                || instance.isOf(ItemRegister.DIAMOND_FISHING_ROD)
+                || instance.isOf(ItemRegister.NETHERITE_FISHING_ROD);
     }
 }

@@ -14,8 +14,7 @@ public abstract class FishingBobberInvalidMixin {
 
     @Inject(method="removeIfInvalid", at = @At(value = "HEAD"), cancellable = true)
     private void removeIfInvalid(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
-        ItemStack itemStack = player.getMainHandStack();
-        ItemStack itemStack2 = player.getOffHandStack();
+        ItemStack itemStack = player.getMainHandStack(), itemStack2 = player.getOffHandStack();
 
         boolean gr = itemStack.isOf(ItemRegister.GOLD_FISHING_ROD), gr2 = itemStack2.isOf(ItemRegister.GOLD_FISHING_ROD);
         boolean ir = itemStack.isOf(ItemRegister.IRON_FISHING_ROD), ir2 = itemStack2.isOf(ItemRegister.IRON_FISHING_ROD);

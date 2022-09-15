@@ -19,7 +19,6 @@ public class FishingRework implements ModInitializer {
         blockReg.registerBlocks();
         itemReg.registerItems();
         predicateRegister.register();
-
         itemGroupReg.main();
     }
 }
