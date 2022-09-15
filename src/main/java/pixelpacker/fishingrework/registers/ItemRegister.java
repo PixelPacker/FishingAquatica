@@ -2,7 +2,6 @@ package pixelpacker.fishingrework.registers;
 
 import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ToolItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -14,11 +13,9 @@ import pixelpacker.fishingrework.items.rod.GoldFishingRodItem;
 import pixelpacker.fishingrework.items.rod.IronFishingRodItem;
 import pixelpacker.fishingrework.items.rod.NetheriteFishingRod;
 
-import javax.swing.*;
-
-
 public class ItemRegister {
     //Normal Items
+    public static Item FISH_OIL_BOTTLE = new Item(new Item.Settings().group(ItemGroupRegister.FISHING_GROUP).maxCount(32));
 
     //Tools
     /**
@@ -39,7 +36,11 @@ public class ItemRegister {
     public static FishingRodItem NETHERITE_FISHING_ROD = new NetheriteFishingRod(new Item.Settings().maxDamage(512).group(ItemGroupRegister.FISHING_GROUP));
 
     public void registerItems(){
+        //Normal Items
+        register("fish_oil_bottle", FISH_OIL_BOTTLE);
+        //Tools
         register("sword_fish", SWORD_FISH);
+        //Fishing Rods
         register("gold_fishing_rod", GOLD_FISHING_ROD);
         register("iron_fishing_rod", IRON_FISHING_ROD);
         register("diamond_fishing_rod", DIAMOND_FISHING_ROD);

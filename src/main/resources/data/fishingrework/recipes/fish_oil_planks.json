@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "POP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "O": {
+      "item": "fishingrework:fish_oil_bottle"
+    }
+  },
+  "result": {
+    "item": "fishingrework:fish_oil_planks",
+    "count": 8
+  }
+}

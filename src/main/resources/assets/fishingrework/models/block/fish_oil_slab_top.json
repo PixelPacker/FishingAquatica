@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "fishingrework:block/fish_oil_planks",
+    "side": "fishingrework:block/fish_oil_planks",
+    "top": "fishingrework:block/fish_oil_planks"
+  }
+}

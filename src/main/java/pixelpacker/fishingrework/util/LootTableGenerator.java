@@ -9,7 +9,6 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import java.util.List;
 
 public class LootTableGenerator {
-
     public static LootTable generateLootTable(List<Item> items) {
         LootPool.Builder lootPool = LootPool.builder().rolls(ConstantLootNumberProvider.create(1));
         // For each item name provided, get the item object, create it as an entry to the loot table, and bosch

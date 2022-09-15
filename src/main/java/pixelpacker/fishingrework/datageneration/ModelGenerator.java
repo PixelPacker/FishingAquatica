@@ -16,8 +16,7 @@ public class ModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(BlockRegister.BASIC_CRATE);
-        blockStateModelGenerator.registerParentedItemModel(BlockRegister.BASIC_CRATE, ModelIds.getBlockModelId(BlockRegister.BASIC_CRATE));
+
     }
 
     @Override
@@ -26,6 +25,6 @@ public class ModelGenerator extends FabricModelProvider {
          * Models.GENERATED for basic items
          * Models.HANDHELD for tools
          */
-        itemModelGenerator.register(ItemRegister.SWORD_FISH.asItem(), Models.HANDHELD);
+
     }
 }

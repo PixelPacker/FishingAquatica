@@ -50,6 +50,5 @@ public abstract class FishingMixin {
                 }
             }
         }
-
     }
 }

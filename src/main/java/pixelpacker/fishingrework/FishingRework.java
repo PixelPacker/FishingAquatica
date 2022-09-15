@@ -8,18 +8,13 @@ import pixelpacker.fishingrework.registers.ModelPredicateRegister;
 
 public class FishingRework implements ModInitializer {
     public static final String MODID = "fishingrework";
-    private BlockRegister blockReg;
-    private ItemRegister itemReg;
-    private ItemGroupRegister itemGroupReg;
-    private ModelPredicateRegister predicateRegister;
 
     @Override
     public void onInitialize() {
-        blockReg = new BlockRegister();
-        itemReg = new ItemRegister();
-        itemGroupReg = new ItemGroupRegister();
-        predicateRegister = new ModelPredicateRegister();
-
+        BlockRegister blockReg = new BlockRegister();
+        ItemRegister itemReg = new ItemRegister();
+        ItemGroupRegister itemGroupReg = new ItemGroupRegister();
+        ModelPredicateRegister predicateRegister = new ModelPredicateRegister();
 
         blockReg.registerBlocks();
         itemReg.registerItems();
