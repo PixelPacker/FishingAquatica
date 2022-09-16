@@ -11,5 +11,6 @@
   "block.fishingrework.fish_oil_fence": "Fish Oil Treated Fence",
   "block.fishingrework.fish_oil_stairs": "Fish Oil Treated Stairs",
   "block.fishingrework.fish_oil_fence_gate": "Fish Oil Treated Fence Gate",
-  "item.fishingrework.fish_oil_bottle": "Bottle of Fish Oil"
+  "item.fishingrework.fish_oil_bottle": "Bottle of Fish Oil",
+  "effect.fishingrework.venom": "Venom"
 }
