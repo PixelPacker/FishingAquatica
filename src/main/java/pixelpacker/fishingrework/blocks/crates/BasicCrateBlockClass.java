@@ -28,9 +28,7 @@ public class BasicCrateBlockClass extends Block {
         super(settings.hardness(1.9f));
     }
 
-    public List<Item> getLootCrateTable(){
-        return CrateLootTables.INSTANCE.BASIC_CRATE;
-    }
+    public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
 
     public int getTimesToLoot(){
         return 3;

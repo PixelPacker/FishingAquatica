@@ -10,7 +10,5 @@ public class ItemGroupRegister {
             new Identifier("fishingrework", "general"),
             () -> new ItemStack(BlockRegister.BASIC_CRATE));
 
-            public void main(){
-
-            }
+            public void main(){}
 }

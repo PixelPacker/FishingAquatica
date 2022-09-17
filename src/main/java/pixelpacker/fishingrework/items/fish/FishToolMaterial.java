@@ -36,5 +36,4 @@ public class FishToolMaterial implements ToolMaterial {
     public Ingredient getRepairIngredient() {
         return null;
     }
-
 }

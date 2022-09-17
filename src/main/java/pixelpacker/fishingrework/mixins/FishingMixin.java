@@ -38,8 +38,8 @@ public abstract class FishingMixin {
                         || player.getMainHandStack().getItem() == ItemRegister.DIAMOND_FISHING_ROD
                         || player.getMainHandStack().getItem() == ItemRegister.NETHERITE_FISHING_ROD){
                     //Chooses a random item from the loot crate table and puts it in the player's inventory
-                    List<Item> cratesTable = CrateLootTables.INSTANCE.CratesTable;
-                    int amountOfCrates = CrateLootTables.INSTANCE.CratesTable.size();
+                    List<Item> cratesTable = CrateLootTables.CratesTable;
+                    int amountOfCrates = CrateLootTables.CratesTable.size();
                     int chosenCrate = random.nextInt((amountOfCrates));
                     player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
                 }

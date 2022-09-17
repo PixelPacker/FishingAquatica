@@ -8,8 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CrateLootTables {
-    public static final CrateLootTables INSTANCE = new CrateLootTables();
-
     /**
      * Create loot tables here to be referenced by different classes.
      * <p>
@@ -18,10 +16,10 @@ public class CrateLootTables {
      */
 
     //REGISTER ALL CRATES HERE
-    public List<Item>CratesTable = Arrays.asList(
+    public static List<Item>CratesTable = Arrays.asList(
             BlockRegister.BASIC_CRATE.asItem()
     );
-    public List<Item> BASIC_CRATE = Arrays.asList(
+    public static List<Item> BASIC_CRATE = Arrays.asList(
             Items.IRON_INGOT, Items.IRON_INGOT,
             Items.DIAMOND,
             Items.GOLD_INGOT, Items.GOLD_INGOT,
