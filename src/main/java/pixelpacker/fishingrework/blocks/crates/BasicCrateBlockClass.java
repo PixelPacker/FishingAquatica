@@ -2,9 +2,11 @@ package pixelpacker.fishingrework.blocks.crates;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextTypes;
@@ -15,9 +17,13 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import pixelpacker.fishingrework.loot.crates.CrateLootTables;
 import pixelpacker.fishingrework.util.LootTableGenerator;
 
@@ -80,5 +86,11 @@ public class BasicCrateBlockClass extends Block {
 
     private void spawnParticle(BlockPos pos, int count, ParticleEffect particleType, ServerWorld world){
         world.spawnParticles(particleType, pos.getX(), pos.getY(), pos.getZ(), count, 0.5f, 0.5f, 0.5f, 0);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.translatable("block.fishingrework.basic_crate.tooltip_1").formatted(Formatting.YELLOW));
+        tooltip.add(Text.translatable("block.fishingrework.basic_crate.tooltip_2").formatted(Formatting.YELLOW));
     }
 }

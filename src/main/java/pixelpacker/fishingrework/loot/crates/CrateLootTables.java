@@ -16,7 +16,7 @@ public class CrateLootTables {
      */
 
     //REGISTER ALL CRATES HERE
-    public static List<Item>CratesTable = Arrays.asList(
+    public static List<Item>BasicCrateTable = Arrays.asList(
             BlockRegister.BASIC_CRATE.asItem()
     );
     public static List<Item> BASIC_CRATE = Arrays.asList(

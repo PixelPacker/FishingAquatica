@@ -12,5 +12,12 @@
   "block.fishingrework.fish_oil_stairs": "Fish Oil Treated Stairs",
   "block.fishingrework.fish_oil_fence_gate": "Fish Oil Treated Fence Gate",
   "item.fishingrework.fish_oil_bottle": "Bottle of Fish Oil",
-  "effect.fishingrework.venom": "Venom"
+  "effect.fishingrework.venom": "Venom",
+  "item.minecraft.fishing_rod.tooltip": "Tier 1",
+  "item.fishingrework.gold_fishing_rod.tooltip": "Tier 2",
+  "item.fishingrework.iron_fishing_rod.tooltip": "Tier 2",
+  "item.fishingrework.diamond_fishing_rod.tooltip": "Tier 3",
+  "item.fishingrework.netherite_fishing_rod.tooltip": "Tier 4",
+  "block.fishingrework.basic_crate.tooltip_1": "Crate full of fish and various materials",
+  "block.fishingrework.basic_crate.tooltip_2": "Obtainable by Tier 1, 2, 3, and 4 Fishing Rods"
 }
