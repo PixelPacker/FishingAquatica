@@ -16,14 +16,32 @@ public class CrateLootTables {
      */
 
     //REGISTER ALL CRATES HERE
-    public static List<Item>BasicCrateTable = Arrays.asList(
-            BlockRegister.BASIC_CRATE.asItem()
+    public static List<Item>TierOneCrates = Arrays.asList(
+            BlockRegister.BASIC_CRATE.asItem(),
+            BlockRegister.PLANTS_CRATE.asItem()
     );
+
+    public static List<Item>TierTwoCrates = Arrays.asList(
+            BlockRegister.BASIC_CRATE.asItem(),
+            BlockRegister.PLANTS_CRATE.asItem(),
+            BlockRegister.RESOURCE_CRATE.asItem(),
+            BlockRegister.MOB_CRATE.asItem()
+    );
+
+    public static List<Item>TierThreeCrates = Arrays.asList(
+            BlockRegister.RESOURCE_CRATE.asItem(),
+            BlockRegister.MOB_CRATE.asItem()
+    );
+
+    public static List<Item>TierFourCrates = Arrays.asList(
+            BlockRegister.RESOURCE_CRATE.asItem(),
+            BlockRegister.MOB_CRATE.asItem(),
+            BlockRegister.RARE_RESOURCE_CRATE.asItem()
+    );
+
     public static List<Item> BASIC_CRATE = Arrays.asList(
             Items.IRON_INGOT, Items.IRON_INGOT,
-            Items.DIAMOND,
             Items.GOLD_INGOT, Items.GOLD_INGOT,
-            Items.LAPIS_LAZULI,
             Items.COAL, Items.COAL, Items.COAL, Items.COAL, Items.COAL, Items.COAL,
             Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON, Items.SALMON,
             Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD, Items.COD,
@@ -31,4 +49,46 @@ public class CrateLootTables {
             Items.TROPICAL_FISH, Items.TROPICAL_FISH, Items.TROPICAL_FISH
     );
 
+    public static List<Item> RESOURCE_CRATE = Arrays.asList(
+            Items.IRON_INGOT, Items.IRON_INGOT, Items.IRON_INGOT,
+            Items.DIAMOND, Items.DIAMOND,
+            Items.GOLD_INGOT, Items.GOLD_INGOT, Items.GOLD_INGOT,
+            Items.COAL, Items.COAL, Items.COAL, Items.COAL, Items.COAL,
+            Items.COPPER_INGOT, Items.COPPER_INGOT, Items.COPPER_INGOT,
+            Items.REDSTONE_BLOCK, Items.REDSTONE, Items.REDSTONE,
+            Items.LAPIS_LAZULI, Items.LAPIS_LAZULI,
+            Items.CLAY, Items.CLAY, Items.CLAY,
+            Items.SAND, Items.SAND
+    );
+
+    public static List<Item> MOB_CRATE = Arrays.asList(
+            Items.SLIME_BALL, Items.SLIME_BALL,
+            Items.ROTTEN_FLESH, Items.ROTTEN_FLESH, Items.ROTTEN_FLESH,
+            Items.GUNPOWDER, Items.GUNPOWDER, Items.GUNPOWDER,
+            Items.BONE, Items.BONE, Items.BONE, Items.BONE,
+            Items.FEATHER, Items.FEATHER, Items.FEATHER,
+            Items.STRING, Items.STRING, Items.STRING,
+            Items.SPIDER_EYE,
+            Items.HONEYCOMB,
+            Items.LEATHER, Items.LEATHER
+    );
+
+    public static List<Item> PLANT_CRATE = Arrays.asList(
+            Items.DANDELION, Items.POPPY, Items.BLUE_ORCHID,
+            Items.ALLIUM, Items.AZURE_BLUET, Items.RED_TULIP,
+            Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP,
+            Items.OXEYE_DAISY, Items.CORNFLOWER, Items.LILY_OF_THE_VALLEY,
+            Items.SUGAR_CANE, Items.BAMBOO, Items.CACTUS, Items.KELP,
+            Items.SUNFLOWER
+    );
+
+    public static List<Item> RARE_RESOURCES_CRATE = Arrays.asList(
+            Items.DIAMOND, Items.DIAMOND, Items.DIAMOND,
+            Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD,
+            Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL,
+            Items.NAUTILUS_SHELL, Items.NAUTILUS_SHELL,
+            Items.HEART_OF_THE_SEA,
+            Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD,
+            Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE
+    );
 }

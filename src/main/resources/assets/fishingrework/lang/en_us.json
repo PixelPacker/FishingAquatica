@@ -19,5 +19,17 @@
   "item.fishingrework.diamond_fishing_rod.tooltip": "Tier 3",
   "item.fishingrework.netherite_fishing_rod.tooltip": "Tier 4",
   "block.fishingrework.basic_crate.tooltip_1": "Crate full of fish and various materials",
-  "block.fishingrework.basic_crate.tooltip_2": "Obtainable by Tier 1, 2, 3, and 4 Fishing Rods"
+  "block.fishingrework.basic_crate.tooltip_2": "Obtainable by Tier 1 and 2 Fishing Rods",
+  "block.fishingrework.resource_crate": "Resources Crate",
+  "block.fishingrework.resource_crate.tooltip_1": "Crate full of resources that can be found underground",
+  "block.fishingrework.resource_crate.tooltip_2": "Obtainable by Tier 2, 3, and 4 Fishing Rods",
+  "block.fishingrework.plants_crate": "Plants Crate",
+  "block.fishingrework.plants_crate.tooltip_1": "Crate full of plants that can be found around the world",
+  "block.fishingrework.plants_crate.tooltip_2": "Obtainable by Tier 1 and 2 Fishing Rods",
+  "block.fishingrework.mob_crate": "Mob Resources Crate",
+  "block.fishingrework.mob_crate.tooltip_1": "Crate full of resources dropped by mobs",
+  "block.fishingrework.mob_crate.tooltip_2": "Obtainable by Tier 2, 3, and 4 Fishing Rods",
+  "block.fishingrework.rare_resource_crate": "Rare Resource Crate",
+  "block.fishingrework.rare_resource_crate.tooltip_1":"Crate full of rare resources",
+  "block.fishingrework.rare_resource_crate.tooltip_2": "Only obtainable by Tier 4 Fishing Rods"
 }

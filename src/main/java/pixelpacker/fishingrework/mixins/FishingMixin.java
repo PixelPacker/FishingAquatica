@@ -29,37 +29,37 @@ public abstract class FishingMixin {
         if(cir.getReturnValue() == 1){
             PlayerEntity player = this.getPlayerOwner();
             int luckOfTheSeaLevel = EnchantmentHelper.getLuckOfTheSea(usedItem);
-            if (player != null && random.nextInt(100) <= (90 - luckOfTheSeaLevel)){
+            if (player != null && random.nextInt(100) >=(90 - luckOfTheSeaLevel)){
                 if(player.getMainHandStack().isIn(Tags.FISHING_RODS)){
                     //Checks tier of fishing rod, makes it able to get different crates depending on tier of fishing rod
                     //TODO: Implement non basic crates, all tiers get same crate loot table
                     if(player.getMainHandStack().isIn(Tags.TIER_1_FISHING_RODS)){
-                        List<Item> cratesTable = CrateLootTables.BasicCrateTable;
+                        List<Item> cratesTable = CrateLootTables.TierOneCrates;
                         int amountOfCrates = cratesTable.size();
                         int chosenCrate = random.nextInt((amountOfCrates));
                         player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
 
                     } else if (player.getMainHandStack().isIn(Tags.TIER_2_FISHING_RODS)) {
-                        List<Item> cratesTable = CrateLootTables.BasicCrateTable;
+                        List<Item> cratesTable = CrateLootTables.TierTwoCrates;
                         int amountOfCrates = cratesTable.size();
                         int chosenCrate = random.nextInt((amountOfCrates));
                         player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
 
                     } else if (player.getMainHandStack().isIn(Tags.TIER_3_FISHING_RODS)) {
-                        List<Item> cratesTable = CrateLootTables.BasicCrateTable;
+                        List<Item> cratesTable = CrateLootTables.TierThreeCrates;
                         int amountOfCrates = cratesTable.size();
                         int chosenCrate = random.nextInt((amountOfCrates));
                         player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
 
                     } else if (player.getMainHandStack().isIn(Tags.TIER_4_FISHING_RODS)) {
-                        List<Item> cratesTable = CrateLootTables.BasicCrateTable;
+                        List<Item> cratesTable = CrateLootTables.TierFourCrates;
                         int amountOfCrates = cratesTable.size();
                         int chosenCrate = random.nextInt((amountOfCrates));
                         player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));
 
                     } else{
                         //Backup in case there is another mod's fishing rod that isn't included in the tags
-                        List<Item> cratesTable = CrateLootTables.BasicCrateTable;
+                        List<Item> cratesTable = CrateLootTables.TierOneCrates;
                         int amountOfCrates = cratesTable.size();
                         int chosenCrate = random.nextInt((amountOfCrates));
                         player.getInventory().insertStack(new ItemStack(cratesTable.get(chosenCrate)));

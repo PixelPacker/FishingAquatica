@@ -4,6 +4,7 @@
     "fishingrework:basic_crate",
     "fishingrework:fish_oil_stairs",
     "fishingrework:fish_oil_slab",
-    "fishingrework:fish_oil_fence"
+    "fishingrework:fish_oil_fence",
+    "fishingrework:plant_crate"
   ]
 }

@@ -3,7 +3,6 @@ package pixelpacker.fishingrework.blocks.crates;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,7 +10,6 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -29,8 +27,8 @@ import pixelpacker.fishingrework.util.LootTableGenerator;
 
 import java.util.List;
 
-public class BasicCrateBlockClass extends Block {
-    public BasicCrateBlockClass(Settings settings){
+public class BasicCrateBlock extends Block {
+    public BasicCrateBlock(Settings settings){
         super(settings.hardness(1.9f));
     }
 
@@ -87,6 +85,7 @@ public class BasicCrateBlockClass extends Block {
     private void spawnParticle(BlockPos pos, int count, ParticleEffect particleType, ServerWorld world){
         world.spawnParticles(particleType, pos.getX(), pos.getY(), pos.getZ(), count, 0.5f, 0.5f, 0.5f, 0);
     }
+
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
