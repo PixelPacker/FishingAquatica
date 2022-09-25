@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import pixelpacker.fishingrework.registers.ItemRegister;
 import pixelpacker.fishingrework.registers.Tags;
 
 @Mixin(FishingBobberEntity.class)

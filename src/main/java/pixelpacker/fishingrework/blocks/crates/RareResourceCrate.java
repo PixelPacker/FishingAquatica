@@ -20,7 +20,7 @@ public class RareResourceCrate extends BasicCrateBlock{
     public List<Item> getLootCrateTable(){ return CrateLootTables.RARE_RESOURCES_CRATE; }
     @Override
     public int getTimesToLoot(){
-        return 4;
+        return 3;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class CrateLootTables {
      * so to achieve weighed tables it needs to be diluted with duplicate entries.
      */
 
-    //REGISTER ALL CRATES HERE
+    //Register crate loot tiers here
     public static List<Item>TierOneCrates = Arrays.asList(
             BlockRegister.BASIC_CRATE.asItem(),
             BlockRegister.PLANTS_CRATE.asItem()
@@ -39,6 +39,7 @@ public class CrateLootTables {
             BlockRegister.RARE_RESOURCE_CRATE.asItem()
     );
 
+    //Register crate loot tables here
     public static List<Item> BASIC_CRATE = Arrays.asList(
             Items.IRON_INGOT, Items.IRON_INGOT,
             Items.GOLD_INGOT, Items.GOLD_INGOT,
@@ -83,12 +84,16 @@ public class CrateLootTables {
     );
 
     public static List<Item> RARE_RESOURCES_CRATE = Arrays.asList(
-            Items.DIAMOND, Items.DIAMOND, Items.DIAMOND,
-            Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD, Items.BLAZE_ROD,
-            Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL,
+            Items.EMERALD_BLOCK,
+            Items.LAPIS_BLOCK,
+            Items.GOLD_BLOCK, Items.GOLD_BLOCK,
+            Items.IRON_BLOCK, Items.IRON_BLOCK,
+            Items.DIAMOND, Items.DIAMOND, Items.DIAMOND, Items.DIAMOND,
+            Items.BLAZE_ROD, Items.BLAZE_ROD,
+            Items.ENDER_PEARL, Items.ENDER_PEARL, Items.ENDER_PEARL,
             Items.NAUTILUS_SHELL, Items.NAUTILUS_SHELL,
             Items.HEART_OF_THE_SEA,
-            Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD,
+            Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD, Items.EMERALD,
             Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE, Items.EXPERIENCE_BOTTLE
     );
 }

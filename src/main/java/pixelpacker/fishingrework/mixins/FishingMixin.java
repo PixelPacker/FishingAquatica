@@ -32,7 +32,6 @@ public abstract class FishingMixin {
             if (player != null && random.nextInt(100) >=(90 - luckOfTheSeaLevel)){
                 if(player.getMainHandStack().isIn(Tags.FISHING_RODS)){
                     //Checks tier of fishing rod, makes it able to get different crates depending on tier of fishing rod
-                    //TODO: Implement non basic crates, all tiers get same crate loot table
                     if(player.getMainHandStack().isIn(Tags.TIER_1_FISHING_RODS)){
                         List<Item> cratesTable = CrateLootTables.TierOneCrates;
                         int amountOfCrates = cratesTable.size();

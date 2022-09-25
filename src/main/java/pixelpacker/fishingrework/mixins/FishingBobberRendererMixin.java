@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import pixelpacker.fishingrework.registers.ItemRegister;
 import pixelpacker.fishingrework.registers.Tags;
 
 @Mixin(FishingBobberEntityRenderer.class)

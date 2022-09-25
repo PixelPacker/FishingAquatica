@@ -21,7 +21,7 @@ public class ResourceCrateBlock extends BasicCrateBlock {
 
     @Override
     public int getTimesToLoot(){
-        return 2;
+        return 3;
     }
 
     @Override

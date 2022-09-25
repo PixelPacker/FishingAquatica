@@ -26,4 +26,8 @@ public class NetheriteFishingRod extends FishingRodItem implements Vanishable {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.fishingrework.netherite_fishing_rod.tooltip").formatted(Formatting.YELLOW));
     }
+
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient.getItem() == Items.NETHERITE_INGOT;
+    }
 }
