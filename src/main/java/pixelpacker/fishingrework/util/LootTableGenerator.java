@@ -7,6 +7,7 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import java.util.List;
+import java.util.Random;
 
 public class LootTableGenerator {
     public static LootTable generateLootTable(List<Item> items) {
@@ -19,4 +20,6 @@ public class LootTableGenerator {
                 .type(LootContextTypes.BLOCK)
                 .build();
     }
+
+    public static Random random = new java.util.Random();
 }

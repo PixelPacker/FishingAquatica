@@ -40,7 +40,6 @@ public class BasicCrateBlock extends Block {
 
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        java.util.Random rand = new java.util.Random();
         if (player.getServer() == null) {
             return;
         }
@@ -48,7 +47,7 @@ public class BasicCrateBlock extends Block {
         if(!world.isClient){
             //Randomizes Volume of sound effects
             float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
-            float pitch = rand.nextFloat((maxPitch - minPitch) + minPitch);
+            float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);
 
             //IMPORTANT: Type casts the world as a server world, REQUIRES to world to not be client
             ServerWorld sWorld = (ServerWorld)world;
@@ -69,7 +68,7 @@ public class BasicCrateBlock extends Block {
         //Randomizes the amount of times that a crate will drop loot
         LootContext ctx = new LootContext.Builder(player.getServer().getWorld(player.getWorld().getRegistryKey())).random(Random.create()).build(LootContextTypes.EMPTY);
         LootTable table = LootTableGenerator.generateLootTable(getLootCrateTable());
-        int timesToLoot = rand.nextInt(getTimesToLoot()), i = 0;
+        int timesToLoot = LootTableGenerator.random.nextInt(getTimesToLoot()), i = 0;
         while(i <= timesToLoot){
             i++;
             table.generateLoot(ctx, itemStack -> {
@@ -85,7 +84,6 @@ public class BasicCrateBlock extends Block {
     private void spawnParticle(BlockPos pos, int count, ParticleEffect particleType, ServerWorld world){
         world.spawnParticles(particleType, pos.getX(), pos.getY(), pos.getZ(), count, 0.5f, 0.5f, 0.5f, 0);
     }
-
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
