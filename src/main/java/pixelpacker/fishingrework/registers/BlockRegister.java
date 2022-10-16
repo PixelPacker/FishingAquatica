@@ -14,7 +14,7 @@ public class BlockRegister {
     //Crates
     public static final Block BASIC_CRATE = new BasicCrateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).hardness(2.0f));
     public static final Block RESOURCE_CRATE = new ResourceCrateBlock(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(2.0f));
-    public static final Block PLANTS_CRATE = new PlantsCrateBlock(FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(2.0f));
+    public static final Block PLANTS_CRATE = new PlantsCrateBlock(FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(.8f));
     public static final Block MOB_CRATE = new MobCrateBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).sounds(BlockSoundGroup.BONE).hardness(2.0f));
     public static final Block RARE_RESOURCE_CRATE = new RareResourceCrate(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(2.0f));
 

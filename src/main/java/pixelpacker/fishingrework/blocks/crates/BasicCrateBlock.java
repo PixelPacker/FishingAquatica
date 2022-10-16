@@ -4,11 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.context.LootContext;
-import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -18,11 +14,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import pixelpacker.fishingrework.loot.crates.CrateLootTables;
 import pixelpacker.fishingrework.util.LootTableGenerator;
 
 import java.util.List;
@@ -32,12 +26,12 @@ public class BasicCrateBlock extends Block {
         super(settings.hardness(1.9f));
     }
 
-    public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
+    /**public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
 
     public int getTimesToLoot(){
         return 3;
     }
-
+    **/
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (player.getServer() == null) {
@@ -66,6 +60,7 @@ public class BasicCrateBlock extends Block {
         }
 
         //Randomizes the amount of times that a crate will drop loot
+        /**
         LootContext ctx = new LootContext.Builder(player.getServer().getWorld(player.getWorld().getRegistryKey())).random(Random.create()).build(LootContextTypes.EMPTY);
         LootTable table = LootTableGenerator.generateLootTable(getLootCrateTable());
         int timesToLoot = LootTableGenerator.random.nextInt(getTimesToLoot()), i = 0;
@@ -76,6 +71,7 @@ public class BasicCrateBlock extends Block {
                 Block.dropStack(player.getWorld(), pos, itemStack);
             });
         }
+         **/
     }
     private void playSound(BlockPos pos, SoundEvent soundEvent, float volume, float pitch, ServerWorld world){
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, volume, pitch);
