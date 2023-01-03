@@ -20,6 +20,9 @@
     "main": [
       "pixelpacker.fishingrework.FishingRework"
     ],
+    "client": [
+      "pixelpacker.fishingrework.FishingReworkClient"
+    ],
     "fabric-datagen": [
       "pixelpacker.fishingrework.datageneration.DataGenEntry"
     ],

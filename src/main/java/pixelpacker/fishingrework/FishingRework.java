@@ -11,12 +11,10 @@ public class FishingRework implements ModInitializer {
         BlockRegister blockReg = new BlockRegister();
         ItemRegister itemReg = new ItemRegister();
         ItemGroupRegister itemGroupReg = new ItemGroupRegister();
-        ModelPredicateRegister predicateRegister = new ModelPredicateRegister();
         EffectsRegister effectsRegister = new EffectsRegister();
 
         blockReg.registerBlocks();
         itemReg.registerItems();
-        predicateRegister.register();
         itemGroupReg.main();
         effectsRegister.registerEffects();
     }
