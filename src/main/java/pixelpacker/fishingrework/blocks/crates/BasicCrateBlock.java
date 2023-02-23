@@ -11,12 +11,15 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.StateManager;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import pixelpacker.fishingrework.registers.BlockRegister;
 import pixelpacker.fishingrework.util.LootTableGenerator;
 
 import java.util.List;
@@ -37,14 +40,10 @@ public class BasicCrateBlock extends Block {
         if (player.getServer() == null) {
             return;
         }
-
-        if(!world.isClient){
+        if(world instanceof ServerWorld sWorld){
             //Randomizes Volume of sound effects
             float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
             float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);
-
-            //IMPORTANT: Type casts the world as a server world, REQUIRES to world to not be client
-            ServerWorld sWorld = (ServerWorld)world;
 
             //Sounds
             playSound(pos, SoundEvents.BLOCK_WOOD_BREAK, volume, pitch, sWorld);

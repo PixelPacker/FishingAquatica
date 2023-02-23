@@ -42,12 +42,10 @@ public abstract class FishingMixin {
         List<Item> cratesTable = cratesTableMainHand;
         //Used to check if the fishing rod tier of offhand because there shouldn't be any other way to have a successful fish without it being in offhand
         //In case the fishing rod is not tagged (E.g from another mod) it will provide a tier 1 crate
-        if(cratesTableMainHand == null) {
-            if(cratesTableOffHand != null){
-                cratesTable = cratesTableOffHand;
-            }else{
-                cratesTable = CrateLootTables.TierOneCrates;
-            }
+        if(cratesTableMainHand == null && cratesTableOffHand != null) {
+            cratesTable = cratesTableOffHand;
+        }else{
+            cratesTable = CrateLootTables.TierOneCrates;
         }
         int amountOfCrates = cratesTable.size();
         int chosenCrate = LootTableGenerator.random.nextInt(amountOfCrates);
