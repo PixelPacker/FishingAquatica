@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.damage.*;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.mob.WardenEntity;
@@ -29,7 +29,7 @@ public class VenomStatusEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier){
         if(!(entity instanceof EnderDragonEntity || entity instanceof WitherEntity || entity instanceof WardenEntity)){
             float damage = .5f;
-            entity.damage(entity.getDamageSources().magic(), damage);
+            entity.damage(DamageSource.MAGIC, damage);
         }
     }
 }
