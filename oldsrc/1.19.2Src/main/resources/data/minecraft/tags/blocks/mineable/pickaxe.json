@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "fishingrework:resource_crate",
+    "fishingrework:rare_resource_crate",
+    "fishingrework:mob_crate"
+  ]
+}

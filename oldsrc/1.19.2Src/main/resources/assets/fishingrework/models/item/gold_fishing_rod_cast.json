@@ -1,0 +1,6 @@
+{
+  "parent": "fishingrework:item/gold_fishing_rod",
+  "textures": {
+    "layer0": "fishingrework:item/gold_fishing_rod_cast"
+  }
+}

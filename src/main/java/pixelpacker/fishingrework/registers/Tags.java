@@ -1,9 +1,11 @@
 package pixelpacker.fishingrework.registers;
 
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class Tags {
     public static final TagKey<Item> FISHING_RODS = ofItem("fishing_rods");
@@ -14,6 +16,6 @@ public class Tags {
     public static final TagKey<Item> TIER_4_FISHING_RODS = ofItem("tier_4_fishing_rods");
 
     private static TagKey<Item> ofItem(String id) {
-        return TagKey.of(Registry.ITEM_KEY, new Identifier(id));
+        return TagKey.of(RegistryKeys.ITEM, new Identifier(id));
     }
 }

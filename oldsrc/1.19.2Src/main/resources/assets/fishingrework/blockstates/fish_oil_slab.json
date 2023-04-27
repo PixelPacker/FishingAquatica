@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fishingrework:block/fish_oil_slab"
+    },
+    "type=double": {
+      "model": "fishingrework:block/fish_oil_planks"
+    },
+    "type=top": {
+      "model": "fishingrework:block/fish_oil_slab_top"
+    }
+  }
+}

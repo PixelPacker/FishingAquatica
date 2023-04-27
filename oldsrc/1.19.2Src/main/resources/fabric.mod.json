@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "fishingrework",
+  "version": "${version}",
+
+  "name": "Fishing Aquatica",
+  "description": "This mod is created to improve the loot of fishing while providing unique rewards.",
+  "authors": [
+    "PixelPacker"
+  ],
+  "contact": {
+
+  },
+
+  "license": "MIT",
+  "icon": "assets/fishingrework/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "pixelpacker.fishingrework.FishingRework"
+    ],
+    "client": [
+      "pixelpacker.fishingrework.FishingReworkClient"
+    ],
+    "fabric-datagen": [
+      "pixelpacker.fishingrework.datageneration.DataGenEntry"
+    ],
+    "preLaunch": [
+      "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"
+    ]
+    },
+
+  "mixins": [
+    "FishingRework.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

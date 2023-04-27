@@ -20,7 +20,6 @@ import java.util.Random;
 
 @Mixin(FishingBobberEntity.class)
 public abstract class FishingMixin {
-    private static Random rand = LootTableGenerator.random;
     @Shadow @Nullable public abstract PlayerEntity getPlayerOwner();
 
     @Inject(method = "use", at = @At(value = "RETURN", target = "Lnet/minecraft/entity/projectile/FishingBobberEntity;use(Lnet/minecraft/item/ItemStack;)I"))
@@ -39,10 +38,12 @@ public abstract class FishingMixin {
         //Checks tier of fishing rod, makes it able to get different crates depending on tier of fishing rod
         List<Item> cratesTableMainHand = getCrateTier(player.getMainHandStack());
         List<Item> cratesTableOffHand = getCrateTier(player.getOffHandStack());
-        List<Item> cratesTable = cratesTableMainHand;
+        List<Item> cratesTable;
         //Used to check if the fishing rod tier of offhand because there shouldn't be any other way to have a successful fish without it being in offhand
         //In case the fishing rod is not tagged (E.g from another mod) it will provide a tier 1 crate
-        if(cratesTableMainHand == null && cratesTableOffHand != null) {
+        if(cratesTableMainHand != null){
+            cratesTable = cratesTableMainHand;
+        }else if(cratesTableOffHand != null) {
             cratesTable = cratesTableOffHand;
         }else{
             cratesTable = CrateLootTables.TierOneCrates;

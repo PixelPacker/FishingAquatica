@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld_rod",
+  "textures": {
+    "layer0": "fishingrework:item/gold_fishing_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "gcast": 1
+      },
+      "model": "fishingrework:item/gold_fishing_rod_cast"
+    }
+  ]
+}

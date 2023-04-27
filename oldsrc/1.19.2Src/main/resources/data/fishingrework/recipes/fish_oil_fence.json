@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PSP",
+    "PSP",
+    "   "
+  ],
+  "key": {
+    "P": {
+      "item": "fishingrework:fish_oil_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "fishingrework:fish_oil_fence",
+    "count": 3
+  }
+}

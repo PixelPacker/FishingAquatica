@@ -4,13 +4,19 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import pixelpacker.fishingrework.FishingRework;
 import pixelpacker.fishingrework.blocks.crates.*;
 
 public class BlockRegister {
+    public static final ItemGroup fishing_group = ItemGroupRegister.FISHING_GROUP;
+
     //Crates
     public static final Block BASIC_CRATE = new BasicCrateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).hardness(2.0f));
     public static final Block RESOURCE_CRATE = new ResourceCrateBlock(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(2.0f));
@@ -22,7 +28,7 @@ public class BlockRegister {
     public static final Block FISH_OIL_PLANKS = new Block(FabricBlockSettings.of(Material.WOOD).hardness(2.0f).sounds(BlockSoundGroup.WOOD).sounds(BlockSoundGroup.WOOD));
     public static final Block FISH_OIL_STAIRS = new StairsBlock(FISH_OIL_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(FISH_OIL_PLANKS));
     public static final Block FISH_OIL_FENCE = new FenceBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
-    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
+    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN);
     public static final Block FISH_OIL_SLAB = new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
 
     public void registerBlocks(){
@@ -41,7 +47,8 @@ public class BlockRegister {
     }
 
     public void register(String blockName, Block block){
-        Registry.register(Registry.BLOCK, new Identifier(FishingRework.MODID, blockName), block);
-        Registry.register(Registry.ITEM, new Identifier(FishingRework.MODID, blockName), new BlockItem(block, new FabricItemSettings().group(ItemGroupRegister.FISHING_GROUP)));
+        Registry.register(Registries.BLOCK, new Identifier(FishingRework.MODID, blockName), block);
+        Registry.register(Registries.ITEM, new Identifier(FishingRework.MODID, blockName), new BlockItem(block, new FabricItemSettings()));
+        ItemGroupRegister.addItemToGroup(block.asItem(), fishing_group);
     }
 }
