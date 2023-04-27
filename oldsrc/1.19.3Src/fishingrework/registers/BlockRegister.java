@@ -28,7 +28,7 @@ public class BlockRegister {
     public static final Block FISH_OIL_PLANKS = new Block(FabricBlockSettings.of(Material.WOOD).hardness(2.0f).sounds(BlockSoundGroup.WOOD).sounds(BlockSoundGroup.WOOD));
     public static final Block FISH_OIL_STAIRS = new StairsBlock(FISH_OIL_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(FISH_OIL_PLANKS));
     public static final Block FISH_OIL_FENCE = new FenceBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
-    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD), WoodType.OAK);
+    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN);
     public static final Block FISH_OIL_SLAB = new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
 
     public void registerBlocks(){
