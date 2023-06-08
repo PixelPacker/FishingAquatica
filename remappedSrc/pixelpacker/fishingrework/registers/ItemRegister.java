@@ -6,7 +6,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ToolItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import pixelpacker.fishingrework.FishingRework;
 import pixelpacker.fishingrework.items.fish.FishToolMaterial;
@@ -17,7 +16,7 @@ import pixelpacker.fishingrework.items.rod.IronFishingRodItem;
 import pixelpacker.fishingrework.items.rod.NetheriteFishingRod;
 
 public class ItemRegister {
-    private static final RegistryKey<ItemGroup> fishing_group = ItemGroupRegister.FISHING_GROUP;
+    private static final ItemGroup fishing_group = ItemGroupRegister.FISHING_GROUP;
     //Normal Items
     public static Item FISH_OIL_BOTTLE = new Item(new Item.Settings().maxCount(32));
 
@@ -51,7 +50,7 @@ public class ItemRegister {
         register("netherite_fishing_rod", NETHERITE_FISHING_ROD, fishing_group);
     }
 
-    public void register(String itemName, Item item, RegistryKey group){
+    public void register(String itemName, Item item, ItemGroup group){
         Registry.register(Registries.ITEM, new Identifier(FishingRework.MODID, itemName), item);
         ItemGroupRegister.addItemToGroup(item, group);
     }

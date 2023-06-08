@@ -12,18 +12,18 @@ import pixelpacker.fishingrework.blocks.crates.*;
 
 public class BlockRegister {
     //Crates
-    public static final Block BASIC_CRATE = new BasicCrateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).hardness(2.0f));
-    public static final Block RESOURCE_CRATE = new ResourceCrateBlock(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(2.0f));
-    public static final Block PLANTS_CRATE = new PlantsCrateBlock(FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(.8f));
-    public static final Block MOB_CRATE = new MobCrateBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).sounds(BlockSoundGroup.BONE).hardness(2.0f));
-    public static final Block RARE_RESOURCE_CRATE = new RareResourceCrate(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(2.0f));
+    public static final Block BASIC_CRATE = new BasicCrateBlock(AbstractBlock.Settings.create().solid().sounds(BlockSoundGroup.WOOD).hardness(2.0f));
+    public static final Block RESOURCE_CRATE = new ResourceCrateBlock(AbstractBlock.Settings.create().solid().sounds(BlockSoundGroup.METAL).hardness(2.0f));
+    public static final Block PLANTS_CRATE = new PlantsCrateBlock(AbstractBlock.Settings.create().solid().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(.8f));
+    public static final Block MOB_CRATE = new MobCrateBlock(AbstractBlock.Settings.create().solid().sounds(BlockSoundGroup.BONE).hardness(2.0f));
+    public static final Block RARE_RESOURCE_CRATE = new RareResourceCrate(AbstractBlock.Settings.create().solid().sounds(BlockSoundGroup.METAL).hardness(2.0f));
 
     //Fish Oil blocks
-    public static final Block FISH_OIL_PLANKS = new Block(FabricBlockSettings.of(Material.WOOD).hardness(2.0f).sounds(BlockSoundGroup.WOOD).sounds(BlockSoundGroup.WOOD));
+    public static final Block FISH_OIL_PLANKS = new Block(AbstractBlock.Settings.create().solid().hardness(2.0f).sounds(BlockSoundGroup.WOOD).sounds(BlockSoundGroup.WOOD));
     public static final Block FISH_OIL_STAIRS = new StairsBlock(FISH_OIL_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(FISH_OIL_PLANKS));
-    public static final Block FISH_OIL_FENCE = new FenceBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
-    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
-    public static final Block FISH_OIL_SLAB = new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
+    public static final Block FISH_OIL_FENCE = new FenceBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
+    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
+    public static final Block FISH_OIL_SLAB = new SlabBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
 
     public void registerBlocks(){
         //Crates
