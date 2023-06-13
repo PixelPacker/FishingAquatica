@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_post",
-  "textures": {
-    "texture": "fishingrework:block/fish_oil_planks"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_fence_gate",
-  "textures": {
-    "texture": "fishingrework:block/fish_oil_planks"
-  }
-}
