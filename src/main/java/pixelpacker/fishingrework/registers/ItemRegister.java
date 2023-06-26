@@ -1,14 +1,12 @@
 package pixelpacker.fishingrework.registers;
 
-import net.minecraft.item.FishingRodItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import pixelpacker.fishingrework.FishingRework;
+import pixelpacker.fishingrework.items.fish.FishOilBottleItem;
 import pixelpacker.fishingrework.items.fish.FishToolMaterial;
 import pixelpacker.fishingrework.items.fish.SwordFishItem;
 import pixelpacker.fishingrework.items.rod.DiamondFishingRodItem;
@@ -19,7 +17,7 @@ import pixelpacker.fishingrework.items.rod.NetheriteFishingRod;
 public class ItemRegister {
     private static final RegistryKey<ItemGroup> fishing_group = ItemGroupRegister.FISHING_GROUP;
     //Normal Items
-    public static Item FISH_OIL_BOTTLE = new Item(new Item.Settings().maxCount(32));
+    public static Item FISH_OIL_BOTTLE = new FishOilBottleItem(new Item.Settings().maxCount(16));
 
     //Tools
     /**

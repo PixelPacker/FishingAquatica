@@ -39,7 +39,7 @@ public class BasicCrateBlock extends Block {
         if (player.getServer() == null) {
             return;
         }
-        if(world instanceof ServerWorld sWorld){
+        if(world instanceof ServerWorld sWorld && !player.getAbilities().creativeMode){
             //Randomizes Volume of sound effects
             float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
             float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);

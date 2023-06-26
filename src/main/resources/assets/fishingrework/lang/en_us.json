@@ -31,5 +31,7 @@
   "block.fishingrework.mob_crate.tooltip_2": "Obtainable by Tier 2, 3, and 4 Fishing Rods",
   "block.fishingrework.rare_resource_crate": "Rare Resource Crate",
   "block.fishingrework.rare_resource_crate.tooltip_1":"Crate full of rare resources",
-  "block.fishingrework.rare_resource_crate.tooltip_2": "Only obtainable by Tier 4 Fishing Rods"
+  "block.fishingrework.rare_resource_crate.tooltip_2": "Only obtainable by Tier 4 Fishing Rods",
+  "item.fishingrework.fish_oil.tooltip_1": "Fish Oil is reported to help people alleviate themselves of an ailment.",
+  "item.fishingrework.fish_oil.tooltip_2": "However, it can make some Nauseous due to the taste for a short period."
 }
