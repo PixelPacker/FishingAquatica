@@ -12,7 +12,20 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
-    maven { url 'https://jitpack.io' }
+    mavenCentral()
+
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+    maven {
+        url "https://maven.shedaniel.me/"
+    }
+    maven {
+        url "https://maven.isxander.dev/releases"
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
 }
 
 dependencies {
@@ -26,6 +39,7 @@ dependencies {
 
     include(implementation("com.github.LlamaLad7:MixinExtras:0.1.0-rc5"))
     include(annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.0-rc5"))
+    modImplementation("com.github.Lortseam.completeconfig:base:2.5.0")
 }
 
 processResources {
