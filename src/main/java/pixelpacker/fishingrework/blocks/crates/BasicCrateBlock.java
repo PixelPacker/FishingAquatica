@@ -36,14 +36,12 @@ public class BasicCrateBlock extends Block {
     **/
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
+        float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);
         if (player.getServer() == null) {
             return;
         }
         if(world instanceof ServerWorld sWorld && !player.getAbilities().creativeMode){
-            //Randomizes Volume of sound effects
-            float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
-            float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);
-
             //Sounds
             playSound(pos, SoundEvents.BLOCK_WOOD_BREAK, volume, pitch, sWorld);
             playSound(pos, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, volume, pitch, sWorld);
@@ -55,21 +53,10 @@ public class BasicCrateBlock extends Block {
             spawnParticle(pos, 10, ParticleTypes.FIREWORK, sWorld);
             spawnParticle(pos, 5, ParticleTypes.POOF, sWorld);
             spawnParticle(pos, 5, ParticleTypes.EXPLOSION, sWorld);
+        }else if(world instanceof ServerWorld sWorld && player.getAbilities().creativeMode){
+            playSound(pos, SoundEvents.BLOCK_WOOD_BREAK, volume + 1f, pitch - .5f, sWorld);
+            spawnBreakParticles(sWorld, player, pos, state);
         }
-
-        //Randomizes the amount of times that a crate will drop loot
-        /**
-        LootContext ctx = new LootContext.Builder(player.getServer().getWorld(player.getWorld().getRegistryKey())).random(Random.create()).build(LootContextTypes.EMPTY);
-        LootTable table = LootTableGenerator.generateLootTable(getLootCrateTable());
-        int timesToLoot = LootTableGenerator.random.nextInt(getTimesToLoot()), i = 0;
-        while(i <= timesToLoot){
-            i++;
-            table.generateLoot(ctx, itemStack -> {
-                World w = player.getEntityWorld();
-                Block.dropStack(player.getWorld(), pos, itemStack);
-            });
-        }
-         **/
     }
     private void playSound(BlockPos pos, SoundEvent soundEvent, float volume, float pitch, ServerWorld world){
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, volume, pitch);

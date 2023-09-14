@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import pixelpacker.fishingrework.FishingRework;
 import pixelpacker.fishingrework.registers.CrateLootTables;
 import pixelpacker.fishingrework.registers.Tags;
 import pixelpacker.fishingrework.util.LootTableGenerator;
@@ -18,9 +19,12 @@ import pixelpacker.fishingrework.util.LootTableGenerator;
 import java.util.List;
 import java.util.Random;
 
+
 @Mixin(FishingBobberEntity.class)
 public abstract class FishingMixin {
+    private static Random rand = new Random();
     @Shadow @Nullable public abstract PlayerEntity getPlayerOwner();
+
 
     @Inject(method = "use", at = @At(value = "RETURN", target = "Lnet/minecraft/entity/projectile/FishingBobberEntity;use(Lnet/minecraft/item/ItemStack;)I"))
     public void use(ItemStack usedItem, CallbackInfoReturnable<Integer> cir) {
@@ -31,7 +35,9 @@ public abstract class FishingMixin {
         }
         PlayerEntity player = this.getPlayerOwner();
         int luckOfTheSeaLevel = EnchantmentHelper.getLuckOfTheSea(usedItem);
-        if (player == null || LootTableGenerator.random.nextInt(100) >= (10 + luckOfTheSeaLevel)) {
+        //Gives a chance of failing to loot a crate
+        int randomChance = rand.nextInt(101);
+        if (player == null || randomChance >= (FishingRework.getConfigRegister().getLootCrateChance() + luckOfTheSeaLevel)) {
             return;
         }
 
