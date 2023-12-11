@@ -39,4 +39,5 @@ public class FishingRework implements ModInitializer {
     public static EffectsRegister getEffectsRegister(){
         return effectsReg;
     }
+
 }

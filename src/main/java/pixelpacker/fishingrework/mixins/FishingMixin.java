@@ -21,7 +21,8 @@ import java.util.Random;
 
 
 @Mixin(FishingBobberEntity.class)
-public abstract class FishingMixin {
+public  abstract class FishingMixin {
+
     private static Random rand = new Random();
     @Shadow @Nullable public abstract PlayerEntity getPlayerOwner();
 
