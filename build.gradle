@@ -39,7 +39,7 @@ dependencies {
 
     include(implementation("com.github.LlamaLad7:MixinExtras:0.1.0-rc5"))
     include(annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.0-rc5"))
-    modImplementation("com.github.Lortseam.completeconfig:base:2.5.0")
+    modImplementation("com.github.Lortseam.completeconfig:base:2.5.2")
 }
 
 processResources {
