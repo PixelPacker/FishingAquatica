@@ -11,14 +11,12 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import pixelpacker.fishingrework.registers.BlockRegister;
 import pixelpacker.fishingrework.util.LootTableGenerator;
 
 import java.util.List;
@@ -28,18 +26,21 @@ public class BasicCrateBlock extends Block {
         super(settings.hardness(1.9f));
     }
 
-    /**public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
-
-    public int getTimesToLoot(){
-        return 3;
-    }
-    **/
+    /**
+     * public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
+     * <p>
+     * public int getTimesToLoot(){
+     * return 3;
+     * }
+     *
+     * @return
+     */
     @Override
-    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
         float pitch = LootTableGenerator.random.nextFloat((maxPitch - minPitch) + minPitch);
         if (player.getServer() == null) {
-            return;
+            return state;
         }
         if(world instanceof ServerWorld sWorld && !player.getAbilities().creativeMode){
             //Sounds
@@ -57,6 +58,7 @@ public class BasicCrateBlock extends Block {
             playSound(pos, SoundEvents.BLOCK_WOOD_BREAK, volume + 1f, pitch - .5f, sWorld);
             spawnBreakParticles(sWorld, player, pos, state);
         }
+        return state;
     }
     private void playSound(BlockPos pos, SoundEvent soundEvent, float volume, float pitch, ServerWorld world){
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, volume, pitch);

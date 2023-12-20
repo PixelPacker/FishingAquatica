@@ -1,7 +1,6 @@
 package pixelpacker.fishingrework.registers;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -9,8 +8,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import pixelpacker.fishingrework.FishingRework;
 import pixelpacker.fishingrework.blocks.crates.*;
@@ -29,7 +26,7 @@ public class BlockRegister {
     public static final Block FISH_OIL_PLANKS = new Block(AbstractBlock.Settings.create().solid().hardness(2.0f).sounds(BlockSoundGroup.WOOD).sounds(BlockSoundGroup.WOOD));
     public static final Block FISH_OIL_STAIRS = new StairsBlock(FISH_OIL_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(FISH_OIL_PLANKS));
     public static final Block FISH_OIL_FENCE = new FenceBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
-    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD), WoodType.OAK);
+    public static final Block FISH_OIL_FENCE_GATE = new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
     public static final Block FISH_OIL_SLAB = new SlabBlock(AbstractBlock.Settings.create().solid().strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
 
     public void registerBlocks(){
