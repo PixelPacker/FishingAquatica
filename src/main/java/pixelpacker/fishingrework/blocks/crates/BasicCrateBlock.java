@@ -26,15 +26,6 @@ public class BasicCrateBlock extends Block {
         super(settings.hardness(1.9f));
     }
 
-    /**
-     * public List<Item> getLootCrateTable(){ return CrateLootTables.BASIC_CRATE; }
-     * <p>
-     * public int getTimesToLoot(){
-     * return 3;
-     * }
-     *
-     * @return
-     */
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         float minPitch = .95f, maxPitch = 1.05f, volume = .5f;
